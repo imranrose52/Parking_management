@@ -7,20 +7,20 @@ const Leftside = () => {
       <nav className="left-side bg-dark">
         <ul>
           <li>
-            <NavLink className="nav-link text-light" to="/admin/dashboard">
+            <NavLink className="nav-link text-light" to="">
               <i class="fa fa-home"></i>
               <span>Dashboard</span>
             </NavLink>
           </li>
 
           <li>
-            <NavLink className="nav-link text-light" to="/admin/user">
+            <NavLink className="nav-link text-light" to="user">
               <i className="fa fa-user"></i>
               <span>User details</span>
             </NavLink>
           </li>
           <li>
-            <NavLink className="nav-link text-light" to="/admin/vehicle">
+            <NavLink className="nav-link text-light" to="vehicle">
               <i className="fa fa-car"></i>
               <span>Vehicle details</span>
             </NavLink>
@@ -31,15 +31,14 @@ const Leftside = () => {
               <span>Parking details</span>
             </NavLink>
           </li>
-
+          {/* 
           <li>
             <NavLink className="nav-link text-light" to="#">
               <i className="fa fa-credit-card"></i>
               <span>Payment details</span>
             </NavLink>
-          </li>
+          </li> */}
         </ul>
-        <Outlet />
       </nav>
     </div>
   );

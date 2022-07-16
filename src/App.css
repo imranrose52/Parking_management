@@ -171,3 +171,31 @@ section {
   height: 600px;
   background-color: antiquewhite;
 }
+
+/* view----page----- */
+.view_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  flex-direction: column;
+  color:darkblue;
+}
+
+/* footer------------- */
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: rgb(6, 5, 5);
+  color: white;
+}
+.footer h2 {
+  font-size: 20px;
+  align-items: center;
+  
+}
+.booking_page {
+  width: 100vw;
+  height: 600px;
+  overflow-y: scroll;
+}

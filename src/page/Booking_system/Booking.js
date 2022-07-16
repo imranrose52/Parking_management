@@ -27,14 +27,14 @@ const Booking = () => {
         const response = await axios.post("/api/v1/admin/parking", parking);
         const mydata = response.data;
         alert(`You have Successfully Submited Mr. ${parking.customer_name}`);
-        navigate("/view");
+        navigate(`/view/:${parking.customer_name}`);
       } catch (error) {
         console.log(error);
       }
     }
   };
   return (
-    <section>
+    <section className="booking_page">
       <div className="booking_parking">
         <h3 className="text-center mt-3">Booking Parking</h3>
       </div>
@@ -91,7 +91,7 @@ const Booking = () => {
               <input
                 type="text"
                 className="form-control"
-                placeholder="Vehicle Number"
+                placeholder="Vehicle Number  ( e.g AS-15M-1010)"
                 onChange={(e) =>
                   setParking((prev) => ({
                     ...prev,
@@ -102,7 +102,7 @@ const Booking = () => {
               />
             </div>
             <div className="form-group">
-              <input
+              {/* <input
                 type="text"
                 className="form-control"
                 placeholder="Vehicle Type"
@@ -113,7 +113,21 @@ const Booking = () => {
                   }))
                 }
                 required
-              />
+              /> */}
+              <select
+                className="form-control"
+                onChange={(e) =>
+                  setParking((prev) => ({
+                    ...prev,
+                    vehicle_name: e.target.value,
+                  }))
+                }
+              >
+                <option>Select Vehicle type</option>
+                <option value="Four Wheelers">Four Wheelers</option>
+                <option value="Bike">Bike</option>
+                <option value="Van">Van</option>
+              </select>
             </div>
           </form>
           <button

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -63,7 +63,6 @@ const Dashboard = () => {
             </NavLink>
           </div>
         </div>
-  
       </div>
     </div>
   );

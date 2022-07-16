@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <div className="header_nav">
       <nav className="navbar navbar-expand-lg  ">
-        <div className="container-fluid d-flex justify-content-evenly">
+        <div className="container-fluid d-flex ">
           <a className="navbar-brand text-light mx-5" href="#">
-            Booking for Parking
+            <h2>Online Parking Booking </h2>
           </a>
           <button
             className="navbar-toggler"
@@ -26,20 +26,20 @@ const Header = () => {
           >
             <ul className="navbar-nav">
               <li className="nav-item ">
-                <a className="nav-link active " aria-current="page" href="#">
+                <NavLink
+                  className="nav-link active text-light"
+                  aria-current="page"
+                  to="/booking"
+                >
                   Home
-                </a>
+                </NavLink>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Features
-                </a>
-              </li>
+
               <li className="nav-item">
                 {/* <a className="nav-link" href="#">
                   Admin
                 </a> */}
-                <NavLink className="nav-link" to="/admin">
+                <NavLink className="nav-link text-light" to="/admin">
                   Admin
                 </NavLink>
               </li>
