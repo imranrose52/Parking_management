@@ -34,12 +34,12 @@ const Parking = () => {
                 <thead>
                   <tr>
                     <th>SI NO</th>
-                    <th>User Name</th>
+                    <th>Customer Name</th>
                     <th>Mobile (ID)</th>
-                    <th>Vehicle no</th>
-                    <th>Vehicle Name</th>
-                    <th>Slot No</th>
-                    <th>payment Status</th>
+                    <th>Vehicle Number</th>
+                    <th>Vehicle Type</th>
+
+                    <th>Status</th>
                     <th>Entry date</th>
                     <th>Action</th>
                   </tr>
@@ -53,7 +53,7 @@ const Parking = () => {
                         <td>{item.mobile_number}</td>
                         <td>{item.vehicle_number}</td>
                         <td>{item.vehicle_name}</td>
-                        <td>{item.slot}</td>
+
                         <td>{item.payment_status}</td>
                         <td>{item.entry_date}</td>
                         <td>

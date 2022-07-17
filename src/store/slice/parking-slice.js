@@ -10,7 +10,7 @@ const initialState = {
 
 // get all Parking------------------------
 export const getAll = createAsyncThunk("parking-get-all", async () => {
-  let response = await axios.get("/api/v1/parking");
+  let response = await axios.get("/api/v1/admin/parking");
 
   return response.data.parking;
 });
@@ -20,7 +20,7 @@ export const createParking = createAsyncThunk(
   "parking-create-new",
   async (body, { rejectWithValue }) => {
     try {
-      let response = await axios.post("/api/v1/parking", body);
+      let response = await axios.post("/api/v1/admin/parking", body);
 
       return response.data;
     } catch (error) {

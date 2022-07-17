@@ -199,3 +199,10 @@ section {
   height: 600px;
   overflow-y: scroll;
 }
+
+
+/* main-div------ */
+.content-wrapper {
+  width: 100%;
+ 
+}

@@ -16,6 +16,7 @@ import AddParking from "./page/user/addParking";
 import Dashboard from "./page/dashboard";
 import Home from "./page/Home";
 import Vehicle from "./page/vehicle/vehicle";
+import Parking from "./page/Parking/Parking";
 
 function App() {
   const { login } = useSelector((state) => state.user);
@@ -31,6 +32,7 @@ function App() {
           <Route path="" index element={<Dashboard />} />
           <Route path="user" element={<AddParking />} />
           <Route path="vehicle" element={<Vehicle />} />
+          <Route path="parking" element={<Parking />} />
         </Route>
         <Route path="/booking" element={<Booking_Parking />} />
         <Route path="/view/:name" element={<View />} />
