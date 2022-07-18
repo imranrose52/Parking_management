@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Edit from "./Edit";
+import { ToastContainer, toast } from "react-toastify";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getAll } from "../../store/slice/parking-slice";
+import { getAll, getParking } from "../../store/slice/parking-slice";
+import Delete from "./Delete";
 
 const Parking = () => {
   const dispatch = useDispatch();
-  const { parkings } = useSelector((state) => state.parking);
-  console.log(parkings);
+  const { parkings, parking } = useSelector((state) => state.parking);
+  console.log(parking);
 
   useEffect(() => {
     dispatch(getAll());
@@ -63,8 +66,18 @@ const Parking = () => {
                               className="fa fa-edit mx-2"
                               data-bs-toggle="modal"
                               data-bs-target="#modal-user-edit"
+                              onClick={() => {
+                                dispatch(getParking(item._id));
+                              }}
                             ></i>
-                            <i className="fa fa-trash mx-2"></i>
+                            <i
+                              className="fa fa-trash mx-2"
+                              data-bs-toggle="modal"
+                              data-bs-target="#modal-user-delete"
+                              onClick={() => {
+                                dispatch(getParking(item._id));
+                              }}
+                            ></i>
                           </div>
                         </td>
                       </tr>
@@ -76,6 +89,9 @@ const Parking = () => {
           </div>
         </div>
       </div>
+      <Edit data={parking} />
+      <Delete data={parking} />
+      <ToastContainer />
     </div>
   );
 };

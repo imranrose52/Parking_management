@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { login } from "../../store/slice/login-slice";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [user, setUser] = useState({
@@ -78,6 +79,7 @@ const Login = () => {
         >
           Log In
         </button>
+        <Link to="/">back to home</Link>
       </div>
     </div>
   );

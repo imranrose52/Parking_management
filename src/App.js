@@ -17,6 +17,8 @@ import Dashboard from "./page/dashboard";
 import Home from "./page/Home";
 import Vehicle from "./page/vehicle/vehicle";
 import Parking from "./page/Parking/Parking";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const { login } = useSelector((state) => state.user);

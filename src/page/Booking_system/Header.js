@@ -5,9 +5,9 @@ const Header = () => {
   return (
     <div className="header_nav">
       <nav className="navbar navbar-expand-lg  ">
-        <div className="container-fluid d-flex ">
+        <div className="container-fluid d-flex justify-content-center">
           <a className="navbar-brand text-light mx-5" href="#">
-            <h2>Online Parking Booking </h2>
+            <h2 className="text-center">Online Parking Booking </h2>
           </a>
           <button
             className="navbar-toggler"
@@ -29,16 +29,13 @@ const Header = () => {
                 <NavLink
                   className="nav-link active text-light"
                   aria-current="page"
-                  to="/booking"
+                  to="/"
                 >
                   Home
                 </NavLink>
               </li>
 
               <li className="nav-item">
-                {/* <a className="nav-link" href="#">
-                  Admin
-                </a> */}
                 <NavLink className="nav-link text-light" to="/admin">
                   Admin
                 </NavLink>

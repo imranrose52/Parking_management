@@ -4,8 +4,15 @@ import axios from "axios";
 const initialState = {
   is_loading: false,
   error_message: false,
+  parking_count: 0,
   parkings: [],
-  parking: {},
+  parking: {
+    customer_name: "",
+    vehicle_number: "",
+    vehicle_name: "",
+    mobile_number: "",
+    entry_date: "",
+  },
 };
 
 // get all Parking------------------------
@@ -13,6 +20,13 @@ export const getAll = createAsyncThunk("parking-get-all", async () => {
   let response = await axios.get("/api/v1/admin/parking");
 
   return response.data.parking;
+});
+
+// get all Parking total count------------------------
+export const getTotalCount = createAsyncThunk("parking-get-all", async () => {
+  let response = await axios.get("/api/v1/admin/parkingCount");
+
+  return response.data.count;
 });
 
 // create driver--------------------
@@ -31,7 +45,7 @@ export const createParking = createAsyncThunk(
 
 // delete Parking---------------
 export const deleteParking = createAsyncThunk("parking-delete", async (id) => {
-  let response = await axios.delete(`api/v1/parking/${id}`);
+  let response = await axios.delete(`api/v1/admin/parking/${id}`);
 
   return id;
 });
@@ -41,7 +55,7 @@ export const updateParking = createAsyncThunk(
   "parking-update",
   async (data) => {
     console.log(data);
-    let response = await axios.put(`api/v1/parking/${data._id}`, data);
+    let response = await axios.put(`api/v1/admin/parking/${data._id}`, data);
 
     return data;
   }
@@ -56,6 +70,21 @@ const parkingSlice = createSlice({
         (item) => item._id === action.payload
       );
     },
+    setCustomer_name(state, action) {
+      state.parking.customer_name = action.payload;
+    },
+    setMobile_number(state, action) {
+      state.parking.mobile_number = action.payload;
+    },
+    setVehicle_number(state, action) {
+      state.parking.vehicle_number = action.payload;
+    },
+    setVehicle_name(state, action) {
+      state.parking.vehicle_name = action.payload;
+    },
+    setEntry_date(state, action) {
+      state.parking.entry_date = action.payload;
+    },
   },
   extraReducers: {
     // get all parking--------
@@ -65,6 +94,9 @@ const parkingSlice = createSlice({
     },
     [getAll.pending]: (state, action) => {
       state.is_loading = true;
+    },
+    [getTotalCount.fulfilled]: (state, action) => {
+      state.parking_count = action.payload;
     },
 
     // create parking-----
@@ -90,5 +122,12 @@ const parkingSlice = createSlice({
     },
   },
 });
-
+export const {
+  getParking,
+  setCustomer_name,
+  setMobile_number,
+  setVehicle_name,
+  setEntry_date,
+  setVehicle_number,
+} = parkingSlice.actions;
 export default parkingSlice.reducer;

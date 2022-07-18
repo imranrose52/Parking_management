@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink, Outlet } from "react-router-dom";
+import { getTotalCount } from "../store/slice/parking-slice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Dashboard = () => {
+  const dispatch = useDispatch();
+  const { parking_count } = useSelector((state) => state.parking);
+
+  useEffect(() => {
+    dispatch(getTotalCount());
+  }, []);
   return (
     <div className="content-wrapper dashboard-content">
       <h2>Dashboard</h2>
@@ -9,7 +17,7 @@ const Dashboard = () => {
         <div className="col-lg-3 col-6 ">
           <div className="small-box bg-primary">
             <div className="inner">
-              <h3 className="mx-4 text-light">100</h3>
+              <h3 className="mx-4 text-light">{parking_count}</h3>
               <p className="mx-4 text-light">Total Parking</p>
             </div>
             <div className="icon">
@@ -28,7 +36,7 @@ const Dashboard = () => {
         <div className="col-lg-3 col-6 ">
           <div className="small-box bg-info">
             <div className="inner">
-              <h3 className="mx-4 text-light">100</h3>
+              <h3 className="mx-4 text-light">200</h3>
               <p className="mx-4 text-light">Booking Slot</p>
             </div>
             <div className="icon">
@@ -47,7 +55,9 @@ const Dashboard = () => {
         <div className="col-lg-3 col-6 ">
           <div className="small-box bg-success">
             <div className="inner">
-              <h3 className="mx-4 text-light">50</h3>
+              <h3 className="mx-4 text-light">
+                {parking_count == 200 ? "0" : 200 - parking_count}
+              </h3>
               <p className="mx-4 text-light">Available Slot</p>
             </div>
             <div className="icon">

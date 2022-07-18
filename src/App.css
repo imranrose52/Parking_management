@@ -16,37 +16,41 @@
 
 
 /*left side-----------------*/
-.left-side{
-  
+.left-side {
+
   width: 250px;
   height: 650px;
 }
-.left-side ul{
+
+.left-side ul {
   padding-top: 20px;
   list-style: none;
 }
-.left-side li  {
+
+.left-side li {
   margin-bottom: 15px;
   padding-top: 8px;
-  
+
   color: white;
 }
+
 li i {
   margin-right: 10px;
 }
 
-/* dashboard*/ 
+/* dashboard*/
 .card-name {
-display: flex;
-justify-content: space-between;
-margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
 }
-.card-name .card{
+
+.card-name .card {
   width: 300px;
   height: 150px;
   border-radius: 20px;
-  
-  
+
+
 
 }
 
@@ -62,6 +66,7 @@ margin-top: 40px;
 .form-group {
   margin-bottom: 18px;
 }
+
 .forms-sample {
   line-height: 30px;
 }
@@ -74,10 +79,13 @@ i {
 /*-------login form body style-------*/
 .form-body-style {
   width: 100%;
-  height: 690px;
+  /* height: 690px; */
+  height: auto;
+  
   background-color: whitesmoke;
   position: relative;
 }
+
 .card-design {
   position: relative;
 }
@@ -86,6 +94,7 @@ i {
   padding: 10px;
   color: #fff;
 }
+
 .icon i {
   font-size: 50px;
   margin-left: 170px;
@@ -98,7 +107,7 @@ i {
 /*--------LogIn form-------*/
 .login-form-style {
   width: 380px;
-  height: 380px;
+  height: auto;
 
   padding: 20px;
   background-color: #fff;
@@ -107,6 +116,7 @@ i {
   /* box-shadow: 2px 2px 2px grey; */
   position: absolute;
 }
+
 .login-form-style .form-control {
   border: 1px solid rgb(10, 185, 10);
 }
@@ -116,33 +126,50 @@ i {
   background-color: rgb(36, 20, 20);
   width: 100%;
   height: 150px;
-  align-items: center;
   color: #fff;
-  display: flex;
-  justify-content: center;
+  align-items: center;
+
+  /* display: flex;
+  justify-content: center; */
+}
+
+.header_nav h2 {
+  font-style: italic;
+  font-family: 'Times New Roman', Times, serif;
+  margin-top: 30px;
+  margin-left: 20px;
+  text-align: center;
+  padding-left: 20px;
+}
+
+.header_nav li {
+  font-size: 20px;
+  margin-left: 20px;
 }
 
 /* hero_section------------------> */
 .hero {
   width: 100%;
   height: auto;
- 
+
   background-color: antiquewhite;
 }
+
 .hero .hero_sub {
   display: flex;
   justify-content: center;
   width: 600px;
   height: 200px;
-  
-  
- 
+
+
+
   align-items: center;
   height: 200px;
   position: relative;
   background-color: yellow;
   border-radius: 10px;
 }
+
 .hero .hero_title {
   align-items: center;
   background-color: green;
@@ -161,6 +188,7 @@ i {
   background-color: rgb(17, 174, 237);
   margin-top: 10px;
 }
+
 .booking_parking h3 {
   align-items: center;
   color: #fff;
@@ -179,7 +207,7 @@ section {
   align-items: center;
   height: 400px;
   flex-direction: column;
-  color:darkblue;
+  color: darkblue;
 }
 
 /* footer------------- */
@@ -189,11 +217,13 @@ section {
   background-color: rgb(6, 5, 5);
   color: white;
 }
+
 .footer h2 {
   font-size: 20px;
   align-items: center;
-  
+
 }
+
 .booking_page {
   width: 100vw;
   height: 600px;
@@ -204,5 +234,58 @@ section {
 /* main-div------ */
 .content-wrapper {
   width: 100%;
+
+}
+.home_main {
+  width: 100%;
+  height: 680px;
+  background-image: url("../public/photo/quick.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.home_page {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  flex-direction: column;
  
+}
+
+.home_page h1 {
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.home_page .online_booking {
+  margin-top: 100px;
+}
+
+.home_page .botton {
+  width: 300px;
+  height: 50px;
+  border-radius: 10px;
+  border: 2px solid green;
+  transition: 2s;
+
+
+}
+.home_page .botton:hover {
+  
+  width: 400px;
+  background-color: palevioletred;
+  color: #fff;
+  border: none;
+
+}
+.home_main .about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  flex-direction: column;
 }
