@@ -12,11 +12,11 @@ const Main = () => {
     <div className="container-fluid">
       <Header />
       <div className="row">
-        <div className="col-2">
+        <div className="col-lg-2 col-md-2 col-2">
           <Leftside />
         </div>
-        <div className="col-9">
-          <div className="mx-4 mt-3">
+        <div className="col-lg-10 col-md-10 col-10">
+          <div className="">
             {/* <Navigation /> */}
             <Outlet />
           </div>

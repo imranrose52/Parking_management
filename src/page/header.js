@@ -5,14 +5,14 @@ import { useSelector, useDispatch } from "react-redux";
 const Header = () => {
   const dispatch = useDispatch();
   return (
-    <div className="header ">
+    <div className="header">
       <div className="mx-5 text-light">
         <a href="/" className="nav-link fw-bold text-light">
           Admin
         </a>
       </div>
       <div>
-        <div className="dropdown mt-2">
+        <div className="dropdown ">
           <button
             className="btn  dropdown-toggle"
             type="button"
@@ -20,7 +20,7 @@ const Header = () => {
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-            <i className="fa fa-user"></i>
+            <i className="fa fa-user fw-bold"></i>
           </button>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             <li>

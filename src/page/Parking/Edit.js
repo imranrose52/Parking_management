@@ -93,7 +93,7 @@ const Edit = ({ data: parking }) => {
                 dispatch(updateParking(update_parking))
                   .unwrap()
                   .then((r) => {
-                    toast.warn("Deleted Successfuly...", { type: "success" });
+                    toast.warn("Updated Successfuly...", { type: "success" });
                   })
                   .catch((e) => {
                     toast.warn("Something Wrong !", { type: "error" });

@@ -31,6 +31,7 @@ const Delete = ({ data: parking }) => {
             <button
               type="button"
               className="btn btn-primary"
+              data-bs-dismiss="modal"
               onClick={() => {
                 dispatch(deleteParking(parking._id))
                   .unwrap()

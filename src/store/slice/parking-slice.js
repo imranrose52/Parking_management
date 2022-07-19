@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+
+import rootClient from "../../config/rootClient";
 
 const initialState = {
   is_loading: false,
@@ -17,24 +18,27 @@ const initialState = {
 
 // get all Parking------------------------
 export const getAll = createAsyncThunk("parking-get-all", async () => {
-  let response = await axios.get("/api/v1/admin/parking");
+  let response = await rootClient.get("/api/v1/admin/parking");
 
   return response.data.parking;
 });
 
 // get all Parking total count------------------------
-export const getTotalCount = createAsyncThunk("parking-get-all", async () => {
-  let response = await axios.get("/api/v1/admin/parkingCount");
+export const getTotalCount = createAsyncThunk(
+  "parking-total-count",
+  async () => {
+    let response = await rootClient.get("/api/v1/admin/parkingCount");
 
-  return response.data.count;
-});
+    return response.data.count;
+  }
+);
 
 // create driver--------------------
 export const createParking = createAsyncThunk(
   "parking-create-new",
   async (body, { rejectWithValue }) => {
     try {
-      let response = await axios.post("/api/v1/admin/parking", body);
+      let response = await rootClient.post("/api/v1/admin/parking", body);
 
       return response.data;
     } catch (error) {
@@ -45,7 +49,7 @@ export const createParking = createAsyncThunk(
 
 // delete Parking---------------
 export const deleteParking = createAsyncThunk("parking-delete", async (id) => {
-  let response = await axios.delete(`api/v1/admin/parking/${id}`);
+  let response = await rootClient.delete(`/api/v1/admin/parking/${id}`);
 
   return id;
 });
@@ -55,7 +59,10 @@ export const updateParking = createAsyncThunk(
   "parking-update",
   async (data) => {
     console.log(data);
-    let response = await axios.put(`api/v1/admin/parking/${data._id}`, data);
+    let response = await rootClient.put(
+      `/api/v1/admin/parking/${data._id}`,
+      data
+    );
 
     return data;
   }
