@@ -17,6 +17,7 @@ import Dashboard from "./page/dashboard";
 import Home from "./page/Home";
 import Vehicle from "./page/vehicle/vehicle";
 import Parking from "./page/Parking/Parking";
+import TotalCount from "./page/TotalCount";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="user" element={<AddParking />} />
           <Route path="vehicle" element={<Vehicle />} />
           <Route path="parking" element={<Parking />} />
+          <Route path="report" element={<TotalCount />} />
         </Route>
         <Route path="/booking" element={<Booking_Parking />} />
         <Route path="/view/:name" element={<View />} />

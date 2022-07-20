@@ -6,6 +6,7 @@ const initialState = {
   is_loading: false,
   error_message: false,
   parking_count: 0,
+  parking_count_by_date: [],
   parkings: [],
   parking: {
     customer_name: "",
@@ -68,6 +69,16 @@ export const updateParking = createAsyncThunk(
   }
 );
 
+// get count by date wise------------------
+export const count_By_date = createAsyncThunk(
+  "parking-count-by-date",
+  async () => {
+    let response = await rootClient.get("/api/v1/admin/count-by-day");
+
+    return response.data.count;
+  }
+);
+
 const parkingSlice = createSlice({
   name: "parking",
   initialState,
@@ -102,8 +113,15 @@ const parkingSlice = createSlice({
     [getAll.pending]: (state, action) => {
       state.is_loading = true;
     },
+
+    // get total  count ------
     [getTotalCount.fulfilled]: (state, action) => {
       state.parking_count = action.payload;
+    },
+
+    // get  count by date wise------
+    [count_By_date.fulfilled]: (state, action) => {
+      state.parking_count_by_date = action.payload;
     },
 
     // create parking-----

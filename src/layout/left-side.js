@@ -32,6 +32,12 @@ const Leftside = () => {
               <span>Vehicle details</span>
             </NavLink>
           </li>
+          <li>
+            <NavLink className="nav-link text-light" to="report">
+              <i className="fa fa-car"></i>
+              <span>Day Wise Report</span>
+            </NavLink>
+          </li>
           {/* 
           <li>
             <NavLink className="nav-link text-light" to="#">

@@ -1,13 +1,23 @@
 import React, { useEffect } from "react";
-import { getTotalCount } from "../../store/slice/parking-slice";
+import { getTotalCount, count_By_date } from "../../store/slice/parking-slice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Hero = () => {
   const dispatch = useDispatch();
-  const { parking_count } = useSelector((state) => state.parking);
+  const { parking_count, parking_count_by_date } = useSelector(
+    (state) => state.parking
+  );
+
+  const todayDate = new Date().toISOString().slice(0, 10);
+  console.log(todayDate);
+
   useEffect(() => {
     dispatch(getTotalCount());
+    dispatch(count_By_date());
   }, []);
+
+  const getdata = parking_count_by_date.filter((i) => i._id === todayDate);
+  console.log(getdata);
   return (
     <div className="hero">
       <div className="hero_sub container mt-3">
